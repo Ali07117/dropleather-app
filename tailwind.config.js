@@ -7,12 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+  fontFamily: {
+    bric: ["Bricolage Grotesque", "sans-serif"],
+    serif: ["Instrument Serif", "serif"],
+    inter: ["Inter", "sans-serif"],
+    // inter: ["Inter", "sans-serif"]
+  }
+  // backgroundImage: {
+  //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+  //   "gradient-conic":
+  //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+  // },
+},
   },
-  plugins: [],
+plugins: [],
 };

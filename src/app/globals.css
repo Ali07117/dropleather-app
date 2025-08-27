@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+  font-family: 'display';
+  src: url('/fonts/display.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -16,7 +29,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,10 +37,55 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.black-45{
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.black-90{
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.black-85{
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.border-50{
+  border-color: rgba(217, 217, 217, 0.5);
+}
+.payment-line{
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
+.nav-hover{
+  background-color: rgba(217, 217, 217, 0.5) !important;
+}
+
+.glass {
+  background: rgba(217, 217, 217, 0.5); /* semi-transparent */
+  backdrop-filter: blur(10px);          /* blur background behind */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
+  /* border: 1px solid rgba(255, 255, 255, 0.2); optional subtle border */
+}
+
+.card-shadow {
+  box-shadow: 
+    0px 4.11px 9.58px 0px #00000017,
+    0px 0.51px 6.06px 0px #0000000D,
+    0px 0.19px 3.14px 0px #00000008;
+}
+
+.hero-span{
+  background: linear-gradient(to right, #B0F9E8, #46B99E);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  background-clip: text;
+  color: transparent;
 }
