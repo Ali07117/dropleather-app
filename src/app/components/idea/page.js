@@ -80,10 +80,12 @@ function Idea() {
       </p>
 
       {/* Second Section */}
-      <div ref={secondMainRef} className="flex mt-[35px] second-main">
+      <div ref={secondMainRef} className="flex gap-[40px] mt-[35px] second-main">
         <div className="h-[100%] w-[65%]">
-          <img src="/assets/ideabg.svg" alt="" />
-          <div className="flex items-center gap-[5px] justify-center mt-[10px]">
+        {/* replave image with video */}
+          <img className="w-[100%]" src="/assets/ideabg.svg" alt="" />
+        {/* replave image with video  */}
+          <div className="flex items-center cursor-pointer gap-[5px] justify-center mt-[10px]">
             <img src="/assets/videoicon.svg" alt="" />
             <p className="font-bric font-[500] text-[16px] leading-[37.12px] underline text-[#000000]">
               Watch video on youtube
@@ -91,7 +93,7 @@ function Idea() {
           </div>
         </div>
 
-        <div className="h-[100%] w-[35%] flex items-center justify-center">
+        <div className="hmin--[100%] w-[35%] bg-[] flex items-center justify-center">
           <div>
             {/* Second heading */}
             <p
