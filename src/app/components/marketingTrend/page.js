@@ -68,7 +68,7 @@ function MarketingTrend() {
           }}
         >
           <SwiperSlide>
-            <div className="h-[524px] card-shadow max rounded-[16.42px] border border-[#E4E5E7] px-[27px] pt-[28px]">
+            <div className="h-[524px] mb-[60px] card-shadow max rounded-[16.42px] border border-[#E4E5E7] px-[27px] pt-[28px]">
               <p className="font-bric font-[600] text-[27.37px] leading-[30px] tracking-[-0.27px] text-[#222325]">
                 How White-Label Leather Dropshipping Works?
               </p>
@@ -80,7 +80,7 @@ function MarketingTrend() {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="h-[524px] card-shadow rounded-[16.42px] border border-[#E4E5E7] px-[27px] pt-[28px]">
+            <div className="h-[524px] mb-[60px] card-shadow rounded-[16.42px] border border-[#E4E5E7] px-[27px] pt-[28px]">
               <p className="font-bric font-[600] text-[27.37px] leading-[30px] tracking-[-0.27px] text-[#222325]">
                 Why Leather Is the Next Big Thing in E-commerce ?
               </p>
@@ -92,7 +92,7 @@ function MarketingTrend() {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="h-[524px] card-shadow rounded-[16.42px] border border-[#E4E5E7] px-[27px] pt-[28px]">
+            <div className="h-[524px] mb-[60px] card-shadow rounded-[16.42px] border border-[#E4E5E7] px-[27px] pt-[28px]">
               <p className="font-bric font-[600] text-[27.37px] leading-[30px] tracking-[-0.27px] text-[#222325]">
                 Printing vs Embroidery: Which is Best for Leather?
               </p>

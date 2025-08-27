@@ -3,7 +3,7 @@ import FooterUnderline from '../footerunderline/page';
 
 function Footer() {
     return (
-        <div className='bg-[#000000] mt-[60px] pt-[60px] min-h-[100px] px-[80px]'>
+        <div className='bg-[#000000] pt-[60px] min-h-[100px] px-[80px]'>
             <div className='flex gap-[40px]'>
                 <div className="left">
                     <p className='font-[display] font-[800] text-[37.47px] leading-[56.21px] text-[#FFFFFF]'>WHITE LOGO</p>
