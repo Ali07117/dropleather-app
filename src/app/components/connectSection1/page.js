@@ -92,6 +92,101 @@
 // export default ConnectSection1;
 
 
+// "use client";
+// import React, { useRef } from "react";
+// import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { ScrollTrigger } from "gsap/all";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// function ConnectSection1(props) {
+//   const headingRef = useRef(null);
+//   const mainContainerRef = useRef(null);
+
+//   useGSAP(() => {
+//     const chars = headingRef.current.querySelectorAll(".char");
+
+//     gsap.fromTo(
+//       chars,
+//       { y: 50, opacity: 0 },
+//       {
+//         y: 0,
+//         opacity: 1,
+//         stagger: 0.02,
+//         duration: 0.5,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: mainContainerRef.current,
+//           start: "top 60%",  // play animation when main-container hits 60%
+//           toggleActions: "play none none reverse", 
+//           // 👆 when scrolling back, reverse animation (reset to opacity:0, y:50)
+//           end: "top 100%",   // reset when main-container hits top 100%
+//         },
+//       }
+//     );
+//   }, { scope: headingRef });
+
+//   return (
+//     <div
+//       ref={mainContainerRef}
+//       className="mx-[150px] h-[570px] flex rounded-[35px] main-container bg-gradient-to-r from-[#F9F9F9] to-[#EFEFEF]"
+//     >
+//       <div className="w-[50%] h-[100%] flex items-center justify-center">
+//         <img src={`/assets/${props.img}.svg`} alt="" />
+//       </div>
+
+//       <div className="w-[50%] relative h-[100%] flex items-center justify-center">
+//         <div className="w-[621px]">
+//           {/* ✅ Animated Heading */}
+//           <p
+//             ref={headingRef}
+//             className="font-bric font-[500] text-[35px] leading-[52px] text-[#000000] overflow-hidden"
+//           >
+//             {props.heading.split("").map((char, i) => (
+//               <span key={i} className="char inline-block">
+//                 {char === " " ? "\u00A0" : char}
+//               </span>
+//             ))}
+//           </p>
+
+//           {/* Subheading */}
+//           <p className="font-inter font-[400] text-[18px] leading-[25px] text-[#474747] mt-[8px]">
+//             {props.parafirst}{" "}
+//             <span className="font-inter underline decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
+//               {props.shopify}
+//             </span>
+//             {props.cooma}{" "}
+//             <span className="font-inter underline decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
+//               {props.woocommerce}
+//             </span>
+//             {props.parasecond}
+//           </p>
+
+//           {/* Button */}
+//           <button className="py-[10px] px-[15px] text-[#FFFFFF] bg-[#000000] border-[1px] mt-[20px] border-[black] rounded-[8.95px] font-bric text-[16px] font-[500] leading-[20px] flex items-center gap-[10px]">
+//             <img src={`/assets/${props.buttonimg}.svg`} alt="" /> {props.button}
+//           </button>
+//         </div>
+
+//         {/* Explore Button with hover */}
+//         <div className="h-[40px] cursor-pointer px-[10px] absolute bottom-[40px] right-[40px] w-[40px] hover:w-[125px] duration-300 transition-all ease-in-out rounded-[50px] overflow-hidden bg-[#FFFFFF] flex items-center justify-center gap-[10px] group">
+//           <p className="font-bric text-[16px] font-[500] text-[#000000] opacity-1 group-hover:inline-block translate-x-[-100px] transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-x-[0px]">
+//             Explore{" "}
+//           </p>
+//           <img
+//             className="group-hover:rotate-[45deg] duration-300 group-hover:translate-x-[-0px] translate-x-[-35px]"
+//             src="/assets/connectarrow.svg"
+//             alt=""
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default ConnectSection1;
+
 "use client";
 import React, { useRef } from "react";
 import gsap from "gsap";
@@ -105,7 +200,7 @@ function ConnectSection1(props) {
   const mainContainerRef = useRef(null);
 
   useGSAP(() => {
-    const chars = headingRef.current.querySelectorAll(".char");
+    const chars = headingRef.current?.querySelectorAll(".char") || [];
 
     gsap.fromTo(
       chars,
@@ -118,10 +213,9 @@ function ConnectSection1(props) {
         ease: "power3.out",
         scrollTrigger: {
           trigger: mainContainerRef.current,
-          start: "top 60%",  // play animation when main-container hits 60%
-          toggleActions: "play none none reverse", 
-          // 👆 when scrolling back, reverse animation (reset to opacity:0, y:50)
-          end: "top 100%",   // reset when main-container hits top 100%
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+          end: "top 100%",
         },
       }
     );
@@ -133,17 +227,20 @@ function ConnectSection1(props) {
       className="mx-[150px] h-[570px] flex rounded-[35px] main-container bg-gradient-to-r from-[#F9F9F9] to-[#EFEFEF]"
     >
       <div className="w-[50%] h-[100%] flex items-center justify-center">
-        <img src={`/assets/${props.img}.svg`} alt="" />
+        <img
+          src={`/assets/${props.img || "default"}.svg`}
+          alt={props.img || "image"}
+        />
       </div>
 
       <div className="w-[50%] relative h-[100%] flex items-center justify-center">
         <div className="w-[621px]">
-          {/* ✅ Animated Heading */}
+          {/* Animated Heading */}
           <p
             ref={headingRef}
             className="font-bric font-[500] text-[35px] leading-[52px] text-[#000000] overflow-hidden"
           >
-            {props.heading.split("").map((char, i) => (
+            {(props.heading || "").split("").map((char, i) => (
               <span key={i} className="char inline-block">
                 {char === " " ? "\u00A0" : char}
               </span>
@@ -152,24 +249,28 @@ function ConnectSection1(props) {
 
           {/* Subheading */}
           <p className="font-inter font-[400] text-[18px] leading-[25px] text-[#474747] mt-[8px]">
-            {props.parafirst}{" "}
+            {props.parafirst || ""}{" "}
             <span className="font-inter underline decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
-              {props.shopify}
+              {props.shopify || ""}
             </span>
-            {props.cooma}{" "}
+            {props.cooma || ""}{" "}
             <span className="font-inter underline decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
-              {props.woocommerce}
+              {props.woocommerce || ""}
             </span>
-            {props.parasecond}
+            {props.parasecond || ""}
           </p>
 
           {/* Button */}
           <button className="py-[10px] px-[15px] text-[#FFFFFF] bg-[#000000] border-[1px] mt-[20px] border-[black] rounded-[8.95px] font-bric text-[16px] font-[500] leading-[20px] flex items-center gap-[10px]">
-            <img src={`/assets/${props.buttonimg}.svg`} alt="" /> {props.button}
+            <img
+              src={`/assets/${props.buttonimg || "default"}.svg`}
+              alt={props.button || "button"}
+            />{" "}
+            {props.button || "Click"}
           </button>
         </div>
 
-        {/* Explore Button with hover */}
+        {/* Explore Button */}
         <div className="h-[40px] cursor-pointer px-[10px] absolute bottom-[40px] right-[40px] w-[40px] hover:w-[125px] duration-300 transition-all ease-in-out rounded-[50px] overflow-hidden bg-[#FFFFFF] flex items-center justify-center gap-[10px] group">
           <p className="font-bric text-[16px] font-[500] text-[#000000] opacity-1 group-hover:inline-block translate-x-[-100px] transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-x-[0px]">
             Explore{" "}
