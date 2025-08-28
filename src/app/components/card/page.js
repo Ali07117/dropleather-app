@@ -2,7 +2,7 @@ import React from 'react';
 
 function Card(props) {
   return (
-    <div>
+    <div className='pb-[50px]'>
     <div className='relative'>
 
       <img src={`/assets/${props.img}.svg`} alt="" />

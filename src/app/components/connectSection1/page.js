@@ -208,8 +208,8 @@ function ConnectSection1(props) {
       {
         y: 0,
         opacity: 1,
-        stagger: 0.02,
-        duration: 0.5,
+        stagger: 0.01,
+        duration: 0.6,
         ease: "power3.out",
         scrollTrigger: {
           trigger: mainContainerRef.current,
@@ -224,21 +224,22 @@ function ConnectSection1(props) {
   return (
     <div
       ref={mainContainerRef}
-      className="mx-[150px] h-[570px] flex rounded-[35px] main-container bg-gradient-to-r from-[#F9F9F9] to-[#EFEFEF]"
+      className="mx-[150px] px-[0px] py-[40px] connect-section-1-container flex rounded-[35px] main-container bg-gradient-to-r from-[#F9F9F9] to-[#EFEFEF]"
     >
-      <div className="w-[50%] h-[100%] flex items-center justify-center">
+      <div className="w-[50%] h-[100%] connect-section-1-left flex items-center justify-center">
         <img
+        className="connect-section-1-container"
           src={`/assets/${props.img || "default"}.svg`}
           alt={props.img || "image"}
         />
       </div>
 
-      <div className="w-[50%] relative h-[100%] flex items-center justify-center">
-        <div className="w-[621px]">
+      <div className="w-[50%] connect-section-1-right relative min-h-[100%] flex items-center justify-center">
+        <div className="w-[90%]">
           {/* Animated Heading */}
           <p
             ref={headingRef}
-            className="font-bric font-[500] text-[35px] leading-[52px] text-[#000000] overflow-hidden"
+            className="font-bric font-[500] connect-section-1-heading text-[35px] leading-[100%] text-[#000000] overflow-hidden"
           >
             {(props.heading || "").split("").map((char, i) => (
               <span key={i} className="char inline-block">
@@ -248,30 +249,33 @@ function ConnectSection1(props) {
           </p>
 
           {/* Subheading */}
-          <p className="font-inter font-[400] text-[18px] leading-[25px] text-[#474747] mt-[8px]">
+          <p className="font-inter font-[400] connect-section-1-para text-[18px] leading-[25px] text-[#474747] mt-[12px]">
             {props.parafirst || ""}{" "}
-            <span className="font-inter underline decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
+            <span className="font-inter underline connect-section-1-para decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
               {props.shopify || ""}
             </span>
             {props.cooma || ""}{" "}
-            <span className="font-inter underline decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
+            <span className="font-inter underline connect-section-1-para decoration-solid decoration-1 underline-offset-[2px] decoration-[#474747] font-[600] text-[18px] leading-[25px]">
               {props.woocommerce || ""}
             </span>
             {props.parasecond || ""}
           </p>
 
           {/* Button */}
-          <button className="py-[10px] px-[15px] text-[#FFFFFF] bg-[#000000] border-[1px] mt-[20px] border-[black] rounded-[8.95px] font-bric text-[16px] font-[500] leading-[20px] flex items-center gap-[10px]">
+          <div className="connect-section-1-button-box">
+
+          <button className="py-[10px] px-[15px] connect-section-1-button text-[#FFFFFF] bg-[#000000] border-[1px] mt-[20px] border-[black] rounded-[8.95px] font-bric text-[16px] font-[500] leading-[20px] flex items-center gap-[10px]">
             <img
               src={`/assets/${props.buttonimg || "default"}.svg`}
               alt={props.button || "button"}
             />{" "}
             {props.button || "Click"}
           </button>
+          </div>
         </div>
 
         {/* Explore Button */}
-        <div className="h-[40px] cursor-pointer px-[10px] absolute bottom-[40px] right-[40px] w-[40px] hover:w-[125px] duration-300 transition-all ease-in-out rounded-[50px] overflow-hidden bg-[#FFFFFF] flex items-center justify-center gap-[10px] group">
+        <div className="h-[40px] connect-section-1-arrow cursor-pointer px-[10px] absolute bottom-[0px] right-[40px] w-[40px] hover:w-[125px] duration-300 transition-all ease-in-out rounded-[50px] overflow-hidden bg-[#FFFFFF] flex items-center justify-center gap-[10px] group">
           <p className="font-bric text-[16px] font-[500] text-[#000000] opacity-1 group-hover:inline-block translate-x-[-100px] transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-x-[0px]">
             Explore{" "}
           </p>

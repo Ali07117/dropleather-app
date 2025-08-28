@@ -23,8 +23,8 @@ function Payment() {
       {
         y: 0,
         opacity: 1,
-        stagger: 0.02,
-        duration: 0.5,
+        stagger: 0.01,
+        duration: 0.6,
         ease: "power3.out",
         scrollTrigger: {
           trigger: mainContainerRef.current,
@@ -43,28 +43,28 @@ function Payment() {
       title: "1. Select Pay by Bank",
       description:
         "Customers choose Pay by Bank with Trustly in your checkout.",
-      img: "/assets/jacketmodel.svg",
+      img: "/assets/payment1.png",
     },
     {
       id: 2,
       title: "2. Pre-populate bank details",
       description:
         "Bank details are pre-filled for customers who’ve saved their details with Trustly before.",
-      img: "/assets/bagmodel.svg",
+      img: "/assets/payment2.png",
     },
     {
       id: 3,
       title: "3. Bank app or eID consent",
       description:
         "They authenticate in their bank app or eID with a single SCA, reducing fraud without leaving your checkout.",
-      img: "/assets/shoesmodel.svg",
+      img: "/assets/payment3.png",
     },
     {
       id: 4,
       title: "4. Payment confirmation",
       description:
         "They finish up on your confirmation page—completing their payment 2x faster than usual.",
-      img: "/assets/jacket.svg",
+      img: "/assets/payment4.png",
     },
   ];
 
@@ -78,8 +78,8 @@ function Payment() {
   // }, [steps.length]);
 
   return (
-    <div ref={mainContainerRef} className="px-[150px] mt-[80px]">
-      <p ref={headingRef} className="text-[49px] font-bric font-[600] text-[#000000]">
+    <div ref={mainContainerRef} className="px-[150px] payment-container mt-[80px]">
+      <p ref={headingRef} className="text-[49px] payment-heading font-bric font-[600] text-[#000000]">
         {"Payments built for speed".split("").map((char, i) => (
           <span key={i} className="char inline-block">
             {char === " " ? "\u00A0" : char}
@@ -87,11 +87,11 @@ function Payment() {
         ))}
       </p>
 
-      <div className="flex h-[500px] flex items-center">
+      <div className="flex payment-inner-container h-[500px] flex items-center">
         {/* LEFT SIDE */}
-        <div className="h-[100%] flex items-center w-[50%] relative">
+        <div className="h-[100%] flex items-center payment-inner-container-left w-[50%] relative">
           {/* Orange Line */}
-          <div className="relative h-[70%] w-[2px] bg-[#E0E0E0]">
+          <div className="relative h-[70%] orange-line min-w-[2px] w-[2px] bg-[#E0E0E0]">
             <div
               className="w-full h-[25%] bg-[orange] absolute transition-all duration-500"
               style={{ top: `${(active - 1) * 25}%` }}
@@ -99,7 +99,7 @@ function Payment() {
           </div>
 
           {/* Steps */}
-          <div className="flex flex-col bg-[] gap-[30px] ml-[40px]">
+          <div className="flex flex-col payment-sub-heading-container bg-[] gap-[30px] ml-[40px]">
             {steps.map((step) => (
               <div
                 key={step.id}
@@ -107,7 +107,7 @@ function Payment() {
                 className="cursor-pointer"
               >
                 <p
-                  className={`text-[28px] font-[600] ${active === step.id ? "text-[#000000]" : "text-[#748074]"
+                  className={`text-[28px] payment-subheading font-[600] ${active === step.id ? "text-[#000000]" : "text-[#748074]"
                     }`}
                 >
                   {step.title}
@@ -124,11 +124,11 @@ function Payment() {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="h-[100%] w-[50%] flex items-center justify-center">
+        <div className="h-[100%] w-[50%] payment-inner-container-right flex items-center justify-center">
           <img
             src={steps.find((s) => s.id === active)?.img}
             alt=""
-            className="transition-all duration-500"
+            className="transition-all h-[100%] payment-mobile duration-500"
           />
         </div>
       </div>

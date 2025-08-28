@@ -19,8 +19,8 @@ function EasyIntegration() {
             {
                 y: 0,
                 opacity: 1,
-                stagger: 0.02,
-                duration: 0.5,
+                stagger: 0.01,
+                duration: 0.6,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: mainContainerRef.current,
@@ -33,16 +33,16 @@ function EasyIntegration() {
         );
     }, { scope: headingRef });
     return (
-        <div ref={mainContainerRef} className='mx-[150px] border-50 border-y mt-[40px] py-[80px]'>
-            <p ref={headingRef} className='text-center font-bric font-[600] text-[32px] leading-[100%] text-[#000000]'>
+        <div ref={mainContainerRef} className='mx-[150px] integration-container border-50 border-y mt-[40px] py-[80px]'>
+            <p ref={headingRef} className='text-center integration-heading font-bric font-[600] text-[32px] leading-[100%] text-[#000000]'>
                 {"Integration with Shopify WooCommerce Etsy and more".split("").map((char, i) => (
                     <span key={i} className="char inline-block">
                         {char === " " ? "\u00A0" : char}
                     </span>
                 ))}
             </p>
-            <p className='text-center font-inter font-[400] text-[18px] text-[#000000]'>Easily connect your store to Dropleather for order automation, inventory sync, and worldwide shipping in one place.</p>
-            <div className="grid grid-cols-4 my-[70px] grid-rows-3 w-[70%] m-auto gap-[60px] place-items-center">
+            <p className='text-center font-inter integration-sub-heading font-[400] text-[18px] text-[#000000]'>Easily connect your store to Dropleather for order automation, inventory sync, and worldwide shipping in one place.</p>
+            <div className="grid md:grid-cols-4 grid-cols-3 my-[70px] md:grid-rows-3 integration-logo-container w-[70%] m-auto gap-[60px] place-items-center">
                 <img src="/assets/bigcommerce.svg" alt="" />
                 <img src="/assets/squarespace.svg" alt="" />
                 <img src="/assets/wix.svg" alt="" />
