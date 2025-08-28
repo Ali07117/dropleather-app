@@ -30,7 +30,7 @@ function Hero() {
       {
         y: 0,
         opacity: 1,
-        stagger: 0.03,
+        stagger: 0.01,
         duration: 0.6,
         ease: "power3.out",
       }
