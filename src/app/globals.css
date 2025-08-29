@@ -234,6 +234,7 @@ overflow-wrap: normal;
   @media screen and (max-width: 600px) {.footer-right-1, .footer-right-2{gap: 0px; justify-content: space-between;} }
   @media screen and (max-width: 550px) { .footer-main-container{padding-left: 10px; padding-right: 10px;} .footer-bottom{gap: 10px; margin-top: 10px;}}
   @media screen and (max-width: 415px) {.footer-text-box{width: 180px; align-items: center;} }
+  @media screen and (max-width: 375px) {.footer-translate{transform: translateX(-20px);} }
 
 
 

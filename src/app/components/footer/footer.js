@@ -93,7 +93,7 @@ function Footer() {
                         <FooterUnderline text={"Design Maker"}/>
                         </div>
                     </div>
-                    <div>
+                    <div className="footer-translate">
                         <h3 className='font-bric footer-line-text-heading mb-[20px] font-[500] text-nowrap text-[16px] leading-[100%] text-[#FFFFFF]'>Integrations</h3>
                         <div className='flex footer-text-box flex-col gap-[2px]'>
                         <FooterUnderline text={"Shopify"}/>
@@ -118,8 +118,8 @@ function Footer() {
                         <FooterUnderline text={"Newsroom"}/>
                         </div>
                     </div>
-                    <div>
-                        <h3 className='font-bric footer-line-text-heading mb-[20px] font-[500] text-nowrap text-[16px] leading-[100%] text-[#FFFFFF]'>Our Company</h3>
+                    <div className="footer-translate">
+                        <h3 className='font-bric  footer-line-text-heading mb-[20px] font-[500] text-nowrap text-[16px] leading-[100%] text-[#FFFFFF]'>Our Company</h3>
                         <div className='flex footer-text-box flex-col gap-[2px]'>
                         <FooterUnderline text={"About Us"}/>
                         <FooterUnderline text={"Jobs"}/>
