@@ -66,7 +66,7 @@ function Footer() {
                     <div>
 
                     <p className='font-bric text-[12px] font-[500] leading-[20px] text-[#FFFFFF] mt-[25px]'>Payment methods we accept:</p>
-                    <div className='flex items-center mt-[15px] gap-[10px]'>
+                    <div className='flex items-center flex-wrap mt-[15px] gap-[10px]'>
                         <img src="/assets/visa.svg" alt="" />
                         <img src="/assets/master.svg" alt="" />
                         <img src="/assets/american.svg" alt="" />
